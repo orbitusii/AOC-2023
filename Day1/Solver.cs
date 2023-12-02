@@ -24,8 +24,10 @@ public class Solver
             var mf = matches.First();
             var ml = matches.Last();
             Console.Write($" has {matches.Count()} matches; we care about");
+
             string first = mf.Groups[1].Value;
             Console.Write($" {first}");
+
             string last = ml.Groups[1].Value;
             Console.Write($" and { last}");
 
@@ -38,8 +40,7 @@ public class Solver
         return Sum;
     }
 
-    public int ParseInt(string alpha) =>
-        alpha.ToLower() switch
+    public int ParseInt(string alpha) => alpha.ToLower() switch
         {
             "one" or "1" => 1,
             "two" or "2" => 2,
