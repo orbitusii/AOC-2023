@@ -14,7 +14,7 @@ static bool ReadInput (string? input)
     string[]? lines = null;
     try
     {
-        lines = File.ReadAllLines($"./Day{input}.txt");
+        lines = File.ReadAllLines($"./Input/Day{input}.txt");
     }
     catch 
     {
