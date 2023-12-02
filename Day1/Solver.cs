@@ -33,7 +33,7 @@ public class Solver
         return Sum;
     }
 
-    public int ParseInt(string alpha) => alpha.ToLower() switch
+    public static int ParseInt(string alpha) => alpha.ToLower() switch
         {
             "one" or "1" => 1,
             "two" or "2" => 2,

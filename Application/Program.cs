@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Application.Days;
 
 Console.WriteLine("Welcome to Advent of Code 2023!");
 Console.WriteLine("This is Robin's Unified Answer Application.");
@@ -10,15 +11,15 @@ while (ReadInput(Console.ReadLine()) == false) { Console.Write("Enter a Day (1-2
 static bool ReadInput (string? input)
 {
     if (input is null || string.IsNullOrWhiteSpace(input)) return false;
+    if (input == "exit" || input == "quit") return true;
 
     string[]? lines = null;
     try
     {
         lines = File.ReadAllLines($"./Input/Day{input}.txt");
     }
-    catch 
-    {
-    }
+    catch (Exception ex)
+    {    }
 
     if(lines is null)
     {
@@ -30,5 +31,6 @@ static bool ReadInput (string? input)
     {
         Console.WriteLine(new Day1.Solver().Solve(lines));
     }
-    return true;
+    if(input == "2") Console.WriteLine(new Day2(12, 13, 14).Solve(lines));
+    return false;
 }
