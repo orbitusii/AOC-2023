@@ -11,12 +11,24 @@ static bool ReadInput (string? input)
 {
     if (input is null || string.IsNullOrWhiteSpace(input)) return false;
 
-    string[] lines = File.ReadAllLines($"./Day{input}.txt");
+    string[]? lines = null;
+    try
+    {
+        lines = File.ReadAllLines($"./Day{input}.txt");
+    }
+    catch 
+    {
+        return false;
+    }
 
     if (input == "1")
     {
         Console.WriteLine(new Day1.Solver().Solve(lines));
     }
-
+    else
+    {
+        Console.WriteLine(new string(input.Reverse().ToArray()));
+        return false;
+    }
     return true;
 }
