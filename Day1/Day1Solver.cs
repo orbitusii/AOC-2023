@@ -6,7 +6,7 @@ public class Day1Solver
 {
     public Day1Solver() { }
 
-    static readonly Regex Regex = new(@"(?<=(\d|one|two|three|four|five|six|seven|eight|nine|zero))+");
+    static readonly Regex Regex = new(@"(?=(\d|one|two|three|four|five|six|seven|eight|nine|zero))");
 
     public int Solve(string[] lines)
     {
