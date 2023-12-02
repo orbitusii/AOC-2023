@@ -18,17 +18,17 @@ static bool ReadInput (string? input)
     }
     catch 
     {
-        return false;
     }
 
-    if (input == "1")
-    {
-        Console.WriteLine(new Day1.Solver().Solve(lines));
-    }
-    else
+    if(lines is null)
     {
         Console.WriteLine(new string(input.Reverse().ToArray()));
         return false;
+    }
+    
+    if (input == "1")
+    {
+        Console.WriteLine(new Day1.Solver().Solve(lines));
     }
     return true;
 }
