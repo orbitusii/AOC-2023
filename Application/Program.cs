@@ -1,5 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using Day1;
 
 Console.WriteLine("Welcome to Advent of Code 2023!");
 Console.WriteLine("This is Robin's Unified Answer Application.");
@@ -16,7 +15,7 @@ static bool ReadInput (string? input)
 
     if (input == "1")
     {
-        Console.WriteLine(new Day1Solver().Solve(lines));
+        Console.WriteLine(new Day1.Solver().Solve(lines));
     }
 
     return true;

@@ -2,11 +2,14 @@
 
 namespace Day1;
 
-public class Day1Solver
+public class Solver
 {
-    public Day1Solver() { }
+    public Solver() { }
+    public Solver(string specialRegex) {
+        Regex = new Regex(specialRegex);
+    }
 
-    static readonly Regex Regex = new(@"(?=(\d|one|two|three|four|five|six|seven|eight|nine|zero))");
+    public Regex Regex = new(@"(?=(\d|one|two|three|four|five|six|seven|eight|nine|zero))");
 
     public int Solve(string[] lines)
     {
