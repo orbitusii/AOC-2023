@@ -4,6 +4,7 @@ using Day1;
 Console.WriteLine("Welcome to Advent of Code 2023!");
 Console.WriteLine("This is Robin's Unified Answer Application.");
 Console.WriteLine("Please peruse the following options:");
+Console.Write("Enter a Day (1-25):");
 
 while (ReadInput(Console.ReadLine()) == false) { Console.Write("Enter a Day (1-25):"); }
 
