@@ -11,7 +11,7 @@ public class Solver
 
     public Regex Regex = new(@"(?=(\d|one|two|three|four|five|six|seven|eight|nine|zero))");
 
-    public int Solve(string[] lines)
+    public int Solve(string[] lines, bool verbose = false)
     {
         Console.WriteLine(lines.Length + " lines to parse...");
 
@@ -19,21 +19,14 @@ public class Solver
 
         foreach (string line in lines)
         {
-            Console.Write(line);
             var matches = Regex.Matches(line);
-            var mf = matches.First();
-            var ml = matches.Last();
-            Console.Write($" has {matches.Count()} matches; we care about");
 
-            string first = mf.Groups[1].Value;
-            Console.Write($" {first}");
-
-            string last = ml.Groups[1].Value;
-            Console.Write($" and { last}");
+            string first = matches.First().Groups[1].Value;
+            string last = matches.Last().Groups[1].Value;
 
             int mashedTogether = ParseInt(first) * 10  + ParseInt(last);
 
-            Console.Write($", yielding {mashedTogether}\n");
+            if(verbose) Console.WriteLine($"{line} has {matches.Count()} matches; we care about {first} and {last}, yielding {mashedTogether}");
             Sum += mashedTogether;
         }
 
